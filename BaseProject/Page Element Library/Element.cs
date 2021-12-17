@@ -6,6 +6,7 @@ using BaseProject.SeleniumHelpers;
 using FluentAssertions;
 using OpenQA.Selenium.Interactions;
 using OpenQA.Selenium.Support.UI;
+using SeleniumExtras.WaitHelpers;
 
 namespace BaseProject.PageElementLibrary
 {

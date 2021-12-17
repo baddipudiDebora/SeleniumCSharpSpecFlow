@@ -98,6 +98,11 @@ namespace BaseProject.SeleniumHelpers
             webDriver.Navigate().GoToUrl(url);
         }
 
+        internal static void NavigateForwardOnBrowser()
+        {
+            webDriver.Navigate().Forward();
+        }
+
         internal static void MaximiseBrowserWindow()
         {
             webDriver.Manage().Window.Maximize();

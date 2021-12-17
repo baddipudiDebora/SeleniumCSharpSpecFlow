@@ -2,6 +2,7 @@
 using OpenQA.Selenium.Support.UI;
 using System;
 using BaseProject.PageElementLibrary;
+using SeleniumExtras.WaitHelpers;
 
 namespace BaseProject.SeleniumHelpers
 {
@@ -66,7 +67,7 @@ namespace BaseProject.SeleniumHelpers
         {
             var locator = element.GetElementByLocator();
             var wait = new WebDriverWait(DriverUtility.webDriver, TimeSpan.FromSeconds(5));
-            wait.Until(ExpectedConditions.InvisibilityOfElementLocated(locator));
+            wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.InvisibilityOfElementLocated(locator));
         }
 
         public static void WaitUntilObjectDisappears(Element element, int timeInSeconds)

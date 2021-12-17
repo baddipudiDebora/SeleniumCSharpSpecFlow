@@ -10,9 +10,9 @@ namespace BaseProject.SeleniumHelpers
     public class BrowserUtility
     {
 
-        public void LaunchBrowserAndNavigateToURLInput(string url, string browser, Dictionary<string, object> capablities, double timeout)
+        public void LaunchBrowserAndNavigateToURLInput(string url, string browser, double timeout)
         {
-            this.LaunchBrowserAndNavigateToURLInput(url, browser, capablities, timeout, ScreenSize.Maximized);
+            this.LaunchBrowserAndNavigateToURLInput(url, browser, timeout);
         }
 
         public void LaunchBrowserAndNavigateToURLInput(string url, string browser, Dictionary<string, object> capablities, double timeout, ScreenSize screenSize)
@@ -147,21 +147,21 @@ namespace BaseProject.SeleniumHelpers
         [Test]
         public void NavigateToURLOnChromeBrowserAndValidateTitle()
         {
-            browserHelper.LaunchBrowserAndNavigateToURLInput("http://www.google.com", "Chrome", capablitiesStructure, 5);
+            browserHelper.LaunchBrowserAndNavigateToURLInput("http://www.google.com", "Chrome", 5);
             browserHelper.GetBrowserTitle().Should().Be("Google");
         }
 
         [Test]
         public void NavigateToURLOnInternetExplorerBrowserAndValidateTitle()
         {
-            browserHelper.LaunchBrowserAndNavigateToURLInput("http://www.google.com", "IE", capablitiesStructure, 5);
+            browserHelper.LaunchBrowserAndNavigateToURLInput("http://www.google.com", "IE", 5);
             browserHelper.GetBrowserTitle().Should().Be("Google");
         }
 
         [Test]
         public void NavigateToURLOnFirefoxBrowserAndValidateTitle()
         {
-            browserHelper.LaunchBrowserAndNavigateToURLInput("http://www.google.com", "Firefox", capablitiesStructure, 5);
+            browserHelper.LaunchBrowserAndNavigateToURLInput("http://www.google.com", "Firefox", 5);
             browserHelper.GetBrowserTitle().Should().Be("Google");
         }
 
