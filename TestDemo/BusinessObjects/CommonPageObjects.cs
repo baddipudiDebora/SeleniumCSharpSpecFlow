@@ -1,5 +1,6 @@
 ﻿using BaseProject.PageElementLibrary;
 using BaseProject.SeleniumHelpers;
+using FluentAssertions;
 using System;
 using System.Collections.Generic;
 using System.Configuration;

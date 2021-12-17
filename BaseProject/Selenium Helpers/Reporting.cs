@@ -178,9 +178,9 @@ namespace BaseProject.Selenium_Helpers
                 lock (syncLock)
                 {
                     ExtentHtmlReporter htmlReporter = new ExtentHtmlReporter(reportPath + "\\" + reportName);
-                    htmlReporter.Configuration().DocumentTitle = TestContext.CurrentContext.Test.Name;
+                /*    htmlReporter.Configuration().DocumentTitle = TestContext.CurrentContext.Test.Name;
                     htmlReporter.Configuration().ReportName = TestContext.CurrentContext.Test.Name + " Report Name";
-                    htmlReporter.AppendExisting = true;
+                    htmlReporter.AppendExisting = true;*/
 
                     extentReport = new ExtentReports();
                     extentReport.AttachReporter(htmlReporter);
