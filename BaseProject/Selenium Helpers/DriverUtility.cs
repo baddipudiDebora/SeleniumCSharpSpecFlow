@@ -17,13 +17,8 @@ namespace BaseProject.SeleniumHelpers
         public static IWebDriver webDriver;
 
         #region WebDriver Browser Actions
-
-        internal static void SetupBrowser(string browserType, Dictionary<string, object> capablities, double timeoutInSeconds)
-        {
-            SetupBrowser(browserType, capablities, timeoutInSeconds, ScreenSize.Maximized);
-        }
-
-        internal static void SetupBrowser(string browserType, Dictionary<string, object> capablities, double timeoutInSeconds, ScreenSize screenSize)
+    
+        internal static void SetupBrowser(string browserType, double timeoutInSeconds)
         {
             browserType.Should().NotBeNullOrEmpty();
             timeoutInSeconds.Should().NotBe(-1);
@@ -48,50 +43,10 @@ namespace BaseProject.SeleniumHelpers
             }
 
             webDriver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(timeoutInSeconds);
-
-            if (ScreenSize.Maximized.Equals(screenSize))
-            {
-                webDriver.Manage().Window.Maximize();
-            }
-            else if (ScreenSize.LargeDesktop.Equals(screenSize))
-            {
-                webDriver.Manage().Window.Size = new Size(1281, 1024);
-            }
-            else if (ScreenSize.SmallDesktop.Equals(screenSize))
-            {
-                webDriver.Manage().Window.Size = new Size(961, 768);
-            }
-            else if (ScreenSize.Tablet.Equals(screenSize))
-            {
-                webDriver.Manage().Window.Size = new Size(601, 1024);
-            }
-            //// TODO: Is does not appear that the Chrome or Firefox viewport can be reduced to the desired size to verify functionality at the desired'Mobile' width (375px).
-            //else if (ScreenSize.Mobile.Equals(screenSize))
-            //{
-            //    webDriver.Manage().Window.Size = new Size(375, 812);
-            //}
-            else
-            {
-                throw new ArgumentException($"Unsupported screen size: {screenSize}");
-            }
+            webDriver.Manage().Window.Maximize();
         }
 
-        internal static DriverOptions SetupBrowserCapablities(Dictionary<string, object> capablityMap, string optionsType)
-        {
-            var options = (DriverOptions)Activator.CreateInstance(GetClassTypeFromWebDriverAssembly(optionsType));
-            options.Should().NotBeNull();
-
-            if (capablityMap.Count > 0)
-            {
-                foreach (var item in capablityMap)
-                {
-                    options.AddAdditionalCapability(item.Key, item.Value);
-                }
-            }
-
-            return options;
-        }
-
+   
         internal static void NavigateToURL(string url)
         {
             url.Should().NotBeNullOrEmpty();

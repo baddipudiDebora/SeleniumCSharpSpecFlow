@@ -8,11 +8,9 @@ namespace BaseProject.PageElementLibrary
         {
         }
 
-        public void SetText(string input, bool clearTextBox = true)
+        public void SetText(string input)
         {
-            if (clearTextBox)
-                GetElement().Clear();
-
+          
             GetElement().SendKeys(input);
         }
 

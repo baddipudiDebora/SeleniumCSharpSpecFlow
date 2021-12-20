@@ -12,20 +12,10 @@ namespace BaseProject.SeleniumHelpers
 
         public void LaunchBrowserAndNavigateToURLInput(string url, string browser, double timeout)
         {
-            this.LaunchBrowserAndNavigateToURLInput(url, browser, timeout);
-        }
-
-        public void LaunchBrowserAndNavigateToURLInput(string url, string browser, Dictionary<string, object> capablities, double timeout, ScreenSize screenSize)
-        {
-            DriverUtility.SetupBrowser(browser, capablities, timeout, screenSize);
+            DriverUtility.SetupBrowser(browser, timeout);
             DriverUtility.NavigateToURL(url);
         }
-
-        public void LaunchBrowser(string browser, double timeout)
-        {
-            DriverUtility.SetupBrowser(browser, new Dictionary<string, object>(), timeout);
-        }
-
+    
         public void NavigateToUrl(string url)
         {
             DriverUtility.NavigateToURL(url);
@@ -162,30 +152,6 @@ namespace BaseProject.SeleniumHelpers
         public void NavigateToURLOnFirefoxBrowserAndValidateTitle()
         {
             browserHelper.LaunchBrowserAndNavigateToURLInput("http://www.google.com", "Firefox", 5);
-            browserHelper.GetBrowserTitle().Should().Be("Google");
-        }
-
-        [Test]
-        public void LaunchChromeBrowserAndNavigateToURLAndValidateTitle()
-        {
-            browserHelper.LaunchBrowser("Chrome", 5);
-            browserHelper.NavigateToUrl("http://www.google.com");
-            browserHelper.GetBrowserTitle().Should().Be("Google");
-        }
-
-        [Test]
-        public void LaunchIEBrowserAndNavigateToURLAndValidateTitle()
-        {
-            browserHelper.LaunchBrowser("IE", 5);
-            browserHelper.NavigateToUrl("http://www.google.com");
-            browserHelper.GetBrowserTitle().Should().Be("Google");
-        }
-
-        [Test]
-        public void LaunchFireFoxBrowserAndNavigateToURLAndValidateTitle()
-        {
-            browserHelper.LaunchBrowser("Firefox", 5);
-            browserHelper.NavigateToUrl("http://www.google.com");
             browserHelper.GetBrowserTitle().Should().Be("Google");
         }
 
