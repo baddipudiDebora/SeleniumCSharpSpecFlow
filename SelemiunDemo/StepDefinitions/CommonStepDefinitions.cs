@@ -38,7 +38,6 @@ namespace SeleniumCSharpBasics.StepDefinitions
         [Then(@"I click on '([^']*)' Button")]
         public void ThenIClickOnButton(string buttonName)
         { if (buttonName == "Hotels")
-
             { 
                 loginPage.clickOnHotelsButton();
             }
@@ -58,7 +57,6 @@ namespace SeleniumCSharpBasics.StepDefinitions
         {
             searchHotelsPage.selectNumberOfAdults();
         }
-
         [When(@"Click on the “Get Set Go” button")]
         public void WhenClickOnTheGetSetGoButton()
         {
@@ -68,7 +66,7 @@ namespace SeleniumCSharpBasics.StepDefinitions
         [Then(@"I Log hotel name and hotel search count")]
         public void ThenILogHotelNameAndHotelSearchCount()
         {
-           Console.WriteLine(hotelsViewPageObjects.getFirstHotelText());
+          hotelsViewPageObjects.getFirstHotelText();
         }
     }
 }

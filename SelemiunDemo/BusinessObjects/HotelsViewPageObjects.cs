@@ -7,7 +7,7 @@ namespace SeleniumCSharpBasics.BusinessObjects
     class HotelsViewPageObjects
     {
         BrowserUtility browser = new BrowserUtility();
-        Element firstHotel = new Element("xpath", "(//h4[@class='dwebCommonstyles__SmallSectionHeader-sc-112ty3f-7 hAEfdZ'])[1]");
+        Element firstHotel = new Element("xpath", "(//div[@class='HotelCardstyles__HotelInfoWrapperDiv-sc-1s80tyk-11 cmcTgu'])[1]");
 
         public string getFirstHotelText()
         {

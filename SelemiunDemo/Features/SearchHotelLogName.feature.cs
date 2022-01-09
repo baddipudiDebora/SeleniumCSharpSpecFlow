@@ -74,12 +74,15 @@ namespace SelemiunDemo.Features
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("1 - Verify navigate to Hotels Page")]
-        public virtual void _1_VerifyNavigateToHotelsPage()
+        [NUnit.Framework.DescriptionAttribute("1 - Verify navigate to particular Page")]
+        [NUnit.Framework.TestCaseAttribute("Hotels", null)]
+        [NUnit.Framework.TestCaseAttribute("Flights", null)]
+        public virtual void _1_VerifyNavigateToParticularPage(string elementToClick, string[] exampleTags)
         {
-            string[] tagsOfScenario = ((string[])(null));
+            string[] tagsOfScenario = exampleTags;
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("1 - Verify navigate to Hotels Page", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+            argumentsOfScenario.Add("Element to Click", elementToClick);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("1 - Verify navigate to particular Page", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 4
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -108,7 +111,7 @@ this.ScenarioInitialize(scenarioInfo);
                         "d Cabs with upto 50% off\' Page is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 7
- testRunner.Then("I click on \'Hotels\' Button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then(string.Format("I click on \'{0}\' Button", elementToClick), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -121,7 +124,7 @@ this.ScenarioInitialize(scenarioInfo);
             string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("2 - Enter Trip detils", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 10
+#line 13
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -141,16 +144,16 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 11
+#line 14
  testRunner.Given("I select India and enter City name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 12
+#line 15
  testRunner.When("I Select one adult under Rooms option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 13
+#line 16
  testRunner.And("Click on the “Get Set Go” button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 14
+#line 17
  testRunner.Then("I Log hotel name and hotel search count", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
