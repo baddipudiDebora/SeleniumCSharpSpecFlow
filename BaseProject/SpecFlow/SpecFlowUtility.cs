@@ -13,9 +13,7 @@ namespace BaseProject.SpecFlow
         /// <summary> 
         /// Method Name: StoreScenarioVariable
         /// Description: This method stores the input key and value pair in the Specflow Scenario Context object
-        /// Author: Nandini
-        /// Date Created: 14/10/2015
-        /// Date Modified:14/10/2015 
+
         /// </summary>
         public static void StoreScenarioVariable(string key, object value, bool replace = true)
         {
@@ -40,9 +38,7 @@ namespace BaseProject.SpecFlow
         /// <summary> 
         /// Method Name: StoreFeatureContextVariable
         /// Description: This method stores the input key and value pair in the Specflow Feature Context object
-        /// Author: Nandini
-        /// Date Created: 14/10/2015
-        /// Date Modified:14/10/2015 
+
         /// </summary>
         public static void StoreFeatureContextVariable(string key, object value, bool replace = true)
         {
@@ -68,9 +64,7 @@ namespace BaseProject.SpecFlow
         /// Method Name: GetValueFromFeatureContextVariable
         /// Description: This method for a given keyname, returns the value stored in Feature Context. If an input for valueStarts is provided, then it retrives the 
         /// string starting with the input provided from the list of values stored for the key in FeatureContext.
-        /// Author: Nandini
-        /// Date Created: 25/10/2015
-        /// Date Modified:25/10/2015 
+    
         /// </summary>
         public static object GetValueFromFeatureContextVariable(string keyname, string valueStarts)
         {
